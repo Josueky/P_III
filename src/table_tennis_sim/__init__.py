@@ -1,6 +1,21 @@
-"""Herramientas para simular trayectorias de tenis de mesa."""
+"""Herramientas didácticas para simular trayectorias de tenis de mesa."""
 
-from .parameters import SimulationParameters
+from .parameters import (
+    BallParameters,
+    NetParameters,
+    SimulationParameters,
+    TableParameters,
+    VisualizationParameters,
+)
 from .simulation import run_simulation
+from .state import SimulationResult
 
-__all__ = ["SimulationParameters", "run_simulation"]
+__all__ = [
+    "BallParameters",
+    "NetParameters",
+    "SimulationParameters",
+    "SimulationResult",
+    "TableParameters",
+    "VisualizationParameters",
+    "run_simulation",
+]

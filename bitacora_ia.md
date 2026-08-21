@@ -13,6 +13,13 @@
 - Se mantuvo una implementación inicial, simple y tipada, pensada para fines didácticos.
 - Aún no se ha traducido la física completa ni las colisiones del script MATLAB.
 
+## Sesión 3 — Estructura alineada con el plan de migración
+
+- Se añadieron los módulos `state.py`, `collisions.py` y `validation.py`.
+- Se agruparon los parámetros de pelota, mesa, red y ejecución con `dataclasses` y unidades SI.
+- La simulación devuelve un resultado estructurado con series temporales y eventos de rebote.
+- Se mantiene un modelo físico básico de gravedad y rebote en mesa; arrastre, Magnus, giro y red quedan para fases posteriores.
+
 ## Próximos pasos
 
 1. Revisar y documentar las ecuaciones del archivo MATLAB.
