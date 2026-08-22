@@ -8,9 +8,9 @@ Migrar de forma incremental el Live Script `legacy/TableTennisTests.mlx` a un pa
 
 La traducción inicial del núcleo numérico se realizó en `parameters.py`,
 `state.py`, `physics.py`, `collisions.py` y `simulation.py`. No incluye
-animación, figuras, pausas ni escritura de archivos. La equivalencia
-cuantitativa con MATLAB queda pendiente por la ambigüedad de las unidades de
-los coeficientes aerodinámicos del script heredado.
+animación, figuras, pausas ni escritura de archivos. La equivalencia numérica
+con MATLAB fue comprobada para el escenario de referencia; la calibración
+física de los coeficientes empíricos continúa pendiente.
 
 ## Módulos propuestos
 
@@ -76,6 +76,13 @@ La visualización debe ser consumidora de estas salidas y no parte del cálculo.
 5. Un escenario de referencia equivalente al de MATLAB produce series de posición y velocidad comparables dentro de tolerancias acordadas y registradas.
 6. Las funciones de simulación se ejecutan sin crear figuras, pausas ni archivos; las funciones de visualización no cambian el resultado numérico.
 7. Las unidades de todas las ecuaciones y coeficientes quedan documentadas y pasan una revisión dimensional.
+
+### Resultado de referencia
+
+La exportación MATLAB de 301 muestras se comparó con Python usando tolerancias
+absoluta y relativa de `1e-10`. Tiempo, posición, velocidad, orientación y
+velocidad angular coincidieron dentro de la tolerancia; el mayor error absoluto
+observado fue `5.12e-13`.
 
 ## Riesgos conocidos
 

@@ -39,3 +39,24 @@
 - Se verificaron formas, valores finitos, rebote de mesa y colisión de red.
 - No se implementó animación. Los coeficientes de fuerza SI son provisionales
   debido a la ambigüedad de unidades documentada en el plan.
+
+## Sesión 5 — Comparación MATLAB–Python
+
+- Se cargaron cinco CSV exportados desde MATLAB con 301 muestras cada uno.
+- Se verificaron tiempo, posición, velocidad, orientación y velocidad angular
+  con tolerancias absoluta y relativa de `1e-10`.
+- Todas las series quedaron dentro de tolerancia y no hubo un primer paso
+  divergente.
+- El error absoluto máximo fue `8.88e-15` para posición, `7.11e-15` para
+  velocidad y `5.12e-13` para orientación y velocidad angular.
+- Se añadió una comparación reproducible en `validation.py` y una gráfica
+  superpuesta para inspección visual.
+
+## Sesión 6 — Documentación de reproducción
+
+- Se actualizó `README.md` con instalación, ejecución, API principal y comando
+  de validación.
+- Se creó `docs/validacion_matlab.md` con el escenario de referencia,
+  exportación de CSV, métricas, tolerancias, resultados e interpretación.
+- Se corrigió el plan para distinguir equivalencia numérica comprobada de
+  calibración física pendiente.
