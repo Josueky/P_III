@@ -2,20 +2,24 @@
 
 from .parameters import (
     BallParameters,
+    ForceParameters,
     NetParameters,
     SimulationParameters,
     TableParameters,
     VisualizationParameters,
 )
-from .simulation import run_simulation
-from .state import SimulationResult
+from .simulation import run_simulation, simulate
+from .state import InitialConditions, SimulationResult
 
 __all__ = [
     "BallParameters",
+    "ForceParameters",
+    "InitialConditions",
     "NetParameters",
     "SimulationParameters",
     "SimulationResult",
     "TableParameters",
     "VisualizationParameters",
     "run_simulation",
+    "simulate",
 ]

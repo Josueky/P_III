@@ -2,7 +2,15 @@
 
 ## Alcance
 
-Migrar de forma incremental el Live Script `legacy/TableTennisTests.mlx` a un paquete Python verificable. Esta fase define la arquitectura y los criterios de validación; no traduce aún el algoritmo MATLAB.
+Migrar de forma incremental el Live Script `legacy/TableTennisTests.mlx` a un paquete Python verificable. El plan define la arquitectura y los criterios de validación que guían la traducción del algoritmo MATLAB.
+
+## Estado de implementación
+
+La traducción inicial del núcleo numérico se realizó en `parameters.py`,
+`state.py`, `physics.py`, `collisions.py` y `simulation.py`. No incluye
+animación, figuras, pausas ni escritura de archivos. La equivalencia
+cuantitativa con MATLAB queda pendiente por la ambigüedad de las unidades de
+los coeficientes aerodinámicos del script heredado.
 
 ## Módulos propuestos
 

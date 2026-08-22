@@ -25,3 +25,17 @@
 1. Revisar y documentar las ecuaciones del archivo MATLAB.
 2. Validar parámetros y unidades.
 3. Comparar resultados de MATLAB y Python.
+
+## Sesión 4 — Núcleo numérico en NumPy
+
+- Se revisó `legacy/TableTennisTests.mlx` junto con el plan de migración del
+  repositorio clonado antes de implementar cambios.
+- Se tradujeron la integración de Euler, gravedad, arrastre lineal, efecto
+  Magnus, arrastre rotacional, rebote con mesa y colisión simplificada con red.
+- Se añadió `InitialConditions` separado de `SimulationParameters`.
+- `simulate(parameters, initial_conditions)` devuelve tiempo, posición,
+  velocidad, orientación y velocidad angular; `run_simulation` conserva el
+  resultado completo con aceleraciones y eventos.
+- Se verificaron formas, valores finitos, rebote de mesa y colisión de red.
+- No se implementó animación. Los coeficientes de fuerza SI son provisionales
+  debido a la ambigüedad de unidades documentada en el plan.
