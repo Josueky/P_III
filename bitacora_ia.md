@@ -25,3 +25,64 @@
 1. Revisar y documentar las ecuaciones del archivo MATLAB.
 2. Validar parámetros y unidades.
 3. Comparar resultados de MATLAB y Python.
+
+## Sesión 4 — Núcleo numérico en NumPy
+
+- Se revisó `legacy/TableTennisTests.mlx` junto con el plan de migración del
+  repositorio clonado antes de implementar cambios.
+- Se tradujeron la integración de Euler, gravedad, arrastre lineal, efecto
+  Magnus, arrastre rotacional, rebote con mesa y colisión simplificada con red.
+- Se añadió `InitialConditions` separado de `SimulationParameters`.
+- `simulate(parameters, initial_conditions)` devuelve tiempo, posición,
+  velocidad, orientación y velocidad angular; `run_simulation` conserva el
+  resultado completo con aceleraciones y eventos.
+- Se verificaron formas, valores finitos, rebote de mesa y colisión de red.
+- No se implementó animación. Los coeficientes de fuerza SI son provisionales
+  debido a la ambigüedad de unidades documentada en el plan.
+
+## Sesión 5 — Comparación MATLAB–Python
+
+- Se cargaron cinco CSV exportados desde MATLAB con 301 muestras cada uno.
+- Se verificaron tiempo, posición, velocidad, orientación y velocidad angular
+  con tolerancias absoluta y relativa de `1e-10`.
+- Todas las series quedaron dentro de tolerancia y no hubo un primer paso
+  divergente.
+- El error absoluto máximo fue `8.88e-15` para posición, `7.11e-15` para
+  velocidad y `5.12e-13` para orientación y velocidad angular.
+- Se añadió una comparación reproducible en `validation.py` y una gráfica
+  superpuesta para inspección visual.
+
+## Sesión 6 — Documentación de reproducción
+
+- Se actualizó `README.md` con instalación, ejecución, API principal y comando
+  de validación.
+- Se creó `docs/validacion_matlab.md` con el escenario de referencia,
+  exportación de CSV, métricas, tolerancias, resultados e interpretación.
+- Se corrigió el plan para distinguir equivalencia numérica comprobada de
+  calibración física pendiente.
+
+## Sesión 7 — Visualización estática y convención de commits
+
+- Se añadieron figuras independientes para trayectoria 3D, posición, velocidad
+  y velocidad angular con Matplotlib.
+- Las funciones consumen `SimulationResult` y no modifican las series ni las
+  ecuaciones numéricas.
+- No se implementó animación.
+- Se documentó en `CONTRIBUTING.md` una convención de commits con tipos de
+  Conventional Commits en inglés y descripciones en español.
+
+## Sesión 8 — Auditoría de requisitos de entrega
+
+- **Prompt o solicitud:** revisar repositorio, `legacy`, módulos, notebook,
+  README, bitácora, plan, dependencias y criterios de calidad, dejando el
+  resultado indicado dentro del proyecto.
+- **Resultado generado:** se creó `docs/verificacion_entrega.md` con estados,
+  evidencia, brechas y prioridades.
+- **Cambios aceptados:** se añadió al README una sección explícita de
+  limitaciones y un enlace a la auditoría.
+- **Cambios rechazados y motivo:** no se marcó como cumplida la interactividad
+  ni se inventaron prompts históricos que no estaban registrados.
+- **Verificación realizada:** revisión de `git log`, `git status`, hash y diff
+  de `legacy`, módulos Python, dependencias, documentación y contenido JSON del
+  notebook.
+- **Responsable de la revisión:** Jose Contreras con apoyo de Codex.
