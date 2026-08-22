@@ -60,3 +60,29 @@
   exportación de CSV, métricas, tolerancias, resultados e interpretación.
 - Se corrigió el plan para distinguir equivalencia numérica comprobada de
   calibración física pendiente.
+
+## Sesión 7 — Visualización estática y convención de commits
+
+- Se añadieron figuras independientes para trayectoria 3D, posición, velocidad
+  y velocidad angular con Matplotlib.
+- Las funciones consumen `SimulationResult` y no modifican las series ni las
+  ecuaciones numéricas.
+- No se implementó animación.
+- Se documentó en `CONTRIBUTING.md` una convención de commits con tipos de
+  Conventional Commits en inglés y descripciones en español.
+
+## Sesión 8 — Auditoría de requisitos de entrega
+
+- **Prompt o solicitud:** revisar repositorio, `legacy`, módulos, notebook,
+  README, bitácora, plan, dependencias y criterios de calidad, dejando el
+  resultado indicado dentro del proyecto.
+- **Resultado generado:** se creó `docs/verificacion_entrega.md` con estados,
+  evidencia, brechas y prioridades.
+- **Cambios aceptados:** se añadió al README una sección explícita de
+  limitaciones y un enlace a la auditoría.
+- **Cambios rechazados y motivo:** no se marcó como cumplida la interactividad
+  ni se inventaron prompts históricos que no estaban registrados.
+- **Verificación realizada:** revisión de `git log`, `git status`, hash y diff
+  de `legacy`, módulos Python, dependencias, documentación y contenido JSON del
+  notebook.
+- **Responsable de la revisión:** Jose Contreras con apoyo de Codex.

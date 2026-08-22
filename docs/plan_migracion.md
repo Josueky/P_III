@@ -12,6 +12,11 @@ animación, figuras, pausas ni escritura de archivos. La equivalencia numérica
 con MATLAB fue comprobada para el escenario de referencia; la calibración
 física de los coeficientes empíricos continúa pendiente.
 
+La visualización estática ya incluye trayectoria 3D y figuras independientes
+para posición, velocidad y velocidad angular. Estas funciones reciben un
+`SimulationResult` ya calculado y no alteran el núcleo numérico. La animación
+permanece pendiente.
+
 ## Módulos propuestos
 
 | Módulo | Responsabilidad |

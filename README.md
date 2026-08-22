@@ -11,8 +11,9 @@ con la mesa y colisión simplificada con la red. La función numérica no crea
 figuras, pausas, animaciones ni archivos.
 
 La ejecución de referencia de 301 muestras coincide con la exportación MATLAB
-dentro de una tolerancia absoluta y relativa de `1e-10`. La animación y la
-interfaz interactiva todavía no forman parte de esta fase.
+dentro de una tolerancia absoluta y relativa de `1e-10`. Ya existen gráficas
+estáticas de trayectoria 3D, posición, velocidad y velocidad angular. La
+animación y la interfaz interactiva todavía no forman parte de esta fase.
 
 ## Estructura
 
@@ -73,8 +74,49 @@ y el primer paso divergente. También genera una gráfica con las series
 superpuestas. Consulte [la guía de validación](docs/validacion_matlab.md) para
 exportar los CSV y entender los resultados.
 
+## Visualización estática
+
+Para ejecutar el escenario predeterminado y abrir cuatro figuras independientes:
+
+```powershell
+.\.venv\Scripts\python.exe -m table_tennis_sim.visualization
+```
+
+También puede consumir un resultado existente sin recalcularlo:
+
+```python
+from table_tennis_sim.visualization import (
+    plot_angular_velocity,
+    plot_position,
+    plot_trajectory_3d,
+    plot_velocity,
+)
+
+plot_trajectory_3d(result, parameters.table, parameters.net)
+plot_position(result)
+plot_velocity(result)
+plot_angular_velocity(result)
+```
+
+Cada función devuelve un objeto `Figure` de Matplotlib. La visualización solo
+lee `SimulationResult` y no modifica sus arreglos ni las ecuaciones físicas.
+
+## Limitaciones actuales
+
+- El notebook interactivo todavía no está migrado a la API actual y no incluye
+  sliders con `ipywidgets`.
+- No se ha implementado animación de la pelota.
+- La equivalencia numérica está verificada para un escenario de referencia;
+  debe repetirse al cambiar parámetros o condiciones iniciales.
+- Los coeficientes aerodinámicos y de fricción son empíricos y no sustituyen
+  una calibración con datos experimentales.
+- La detección de colisiones es discreta y la red utiliza una respuesta
+  geométrica simplificada heredada del prototipo MATLAB.
+
 ## Documentación
 
 - [Plan de migración](docs/plan_migracion.md)
 - [Validación MATLAB–Python](docs/validacion_matlab.md)
+- [Verificación de requisitos de entrega](docs/verificacion_entrega.md)
 - [Bitácora de IA](bitacora_ia.md)
+- [Convenciones de contribución](CONTRIBUTING.md)
